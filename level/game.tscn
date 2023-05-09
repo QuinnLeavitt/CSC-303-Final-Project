@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfaf3elpkgo64"]
+
+[ext_resource type="Script" path="res://level/Game.gd" id="1_0dsc7"]
+[ext_resource type="PackedScene" uid="uid://b0gtlja0y4b4h" path="res://player/player.tscn" id="2_sdx0n"]
+[ext_resource type="PackedScene" uid="uid://1tql7gtnjy2l" path="res://enemies/minions/basic_enemy.tscn" id="3_gpv7n"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_0dsc7")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_sdx0n")]
+position = Vector2(541, 355)
+
+[node name="basic_enemy" parent="." instance=ExtResource("3_gpv7n")]
+position = Vector2(125, 491)
+
+[node name="basic_enemy2" parent="." instance=ExtResource("3_gpv7n")]
+position = Vector2(923, 183)
