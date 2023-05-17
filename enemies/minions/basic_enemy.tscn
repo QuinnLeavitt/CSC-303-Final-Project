@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://1tql7gtnjy2l"]
+
+[ext_resource type="Script" path="res://enemies/minions/basic_enemy.gd" id="1_j5nm7"]
+[ext_resource type="Texture2D" uid="uid://one6b4wog84m" path="res://assets/art/white_box.png" id="2_fndtq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifvtx"]
+radius = 69.1158
+
+[node name="basic_enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_j5nm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fndtq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ifvtx")
