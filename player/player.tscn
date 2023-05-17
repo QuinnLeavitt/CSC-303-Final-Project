@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0gtlja0y4b4h"]
+[gd_scene load_steps=5 format=3 uid="uid://b0gtlja0y4b4h"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_rkbbc"]
 [ext_resource type="Texture2D" uid="uid://cp4fv1b4wmqi8" path="res://assets/art/Box.png" id="2_cm8hs"]
+[ext_resource type="PackedScene" uid="uid://bbqtt1kclfkuh" path="res://ui/game_over_screen.tscn" id="3_ffodx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gg7xa"]
 radius = 10.018
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 25
 motion_mode = 1
 script = ExtResource("1_rkbbc")
 
@@ -22,7 +25,10 @@ scale = Vector2(3.96875, 4.09375)
 texture = ExtResource("2_cm8hs")
 
 [node name="RightArm" type="Node2D" parent="."]
-position = Vector2(-50, -58)
+position = Vector2(56, 60)
 
 [node name="LeftArm" type="Node2D" parent="."]
-position = Vector2(50, -58)
+position = Vector2(58, -60)
+
+[node name="GameOverScreen" parent="." instance=ExtResource("3_ffodx")]
+visible = false

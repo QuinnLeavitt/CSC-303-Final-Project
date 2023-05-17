@@ -7,3 +7,10 @@ func _ready():
 
 func _on_lifetime_timeout():
 	queue_free()
+
+func _on_body_entered(body):
+	print(body)
+	if body is Enemy:
+		print('hitting enemy')
+		var enemy = body
+		enemy.take_damage()

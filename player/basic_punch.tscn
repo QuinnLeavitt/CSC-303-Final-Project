@@ -4,11 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://one6b4wog84m" path="res://assets/art/white_box.png" id="1_kjh5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5qny"]
+size = Vector2(95.3333, 89.3333)
 
 [node name="Punch" type="Area2D"]
+collision_layer = 256
+collision_mask = 4
 script = ExtResource("1_7b3mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.499998, -1)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_y5qny")
 
@@ -16,4 +20,7 @@ shape = SubResource("RectangleShape2D_y5qny")
 texture = ExtResource("1_kjh5s")
 
 [node name="Lifetime" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
