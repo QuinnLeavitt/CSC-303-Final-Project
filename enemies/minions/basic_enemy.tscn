@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://1tql7gtnjy2l"]
+[gd_scene load_steps=5 format=3 uid="uid://1tql7gtnjy2l"]
 
 [ext_resource type="Script" path="res://enemies/minions/basic_enemy.gd" id="1_j5nm7"]
 [ext_resource type="Texture2D" uid="uid://one6b4wog84m" path="res://assets/art/white_box.png" id="2_fndtq"]
@@ -6,7 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ifvtx"]
 radius = 69.1158
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2upr0"]
+radius = 91.2688
+
 [node name="basic_enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_j5nm7")
 
@@ -15,3 +20,16 @@ texture = ExtResource("2_fndtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ifvtx")
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(75, 1)
+rotation = -3.14159
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(75, 0.999667)
+shape = SubResource("CircleShape2D_2upr0")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]

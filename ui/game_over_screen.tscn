@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbqtt1kclfkuh"]
+
+[ext_resource type="Script" path="res://ui/game_over_screen.gd" id="1_k1bo4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5a4d"]
+font_size = 64
+
+[node name="game_over_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1bo4")
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 199.0
+offset_right = 672.0
+offset_bottom = 290.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_d5a4d")
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 289.0
+offset_right = 556.0
+offset_bottom = 336.0
+text = "RESTART"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
