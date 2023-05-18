@@ -1,4 +1,4 @@
-# csc-303-final-project# csc-303-final-project : DOT PUNCH
+# csc-303-final-project : DOT PUNCH
 ## Play DOT PUNCH on itch.io: https://quinnleavitt.itch.io/dot-punch
 
 Try to defeat as many dots as possible before they overwhelm you! Defeating each dot will replenish some of your missing health and increase your score.The game will progressively spawn more and more dots so make sure that you balance defeating them, by punching them, and not getting swarmed.
