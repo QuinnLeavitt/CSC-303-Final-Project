@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://da5burfmtfom6"]
 
 [ext_resource type="Script" path="res://player/basic_punch.gd" id="1_7b3mb"]
-[ext_resource type="Texture2D" uid="uid://one6b4wog84m" path="res://assets/art/white_box.png" id="1_kjh5s"]
+[ext_resource type="Texture2D" uid="uid://can8um1bthqcd" path="res://assets/art/Placeholder_fist.png" id="2_vbupq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5qny"]
-size = Vector2(95.3333, 89.3333)
+[sub_resource type="CircleShape2D" id="CircleShape2D_25q12"]
+radius = 21.3333
 
 [node name="Punch" type="Area2D"]
 collision_layer = 256
@@ -12,12 +12,12 @@ collision_mask = 4
 script = ExtResource("1_7b3mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.499998, -1)
 scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_y5qny")
+shape = SubResource("CircleShape2D_25q12")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kjh5s")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vbupq")
 
 [node name="Lifetime" type="Timer" parent="."]
 wait_time = 0.1

@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfaf3elpkgo64"]
+[gd_scene load_steps=10 format=3 uid="uid://bfaf3elpkgo64"]
 
 [ext_resource type="Script" path="res://level/Game.gd" id="1_0dsc7"]
 [ext_resource type="PackedScene" uid="uid://b0gtlja0y4b4h" path="res://player/player.tscn" id="2_sdx0n"]
 [ext_resource type="PackedScene" uid="uid://1tql7gtnjy2l" path="res://enemies/minions/basic_enemy.tscn" id="3_gpv7n"]
 [ext_resource type="PackedScene" uid="uid://bbqtt1kclfkuh" path="res://ui/game_over_screen.tscn" id="4_relea"]
+[ext_resource type="PackedScene" uid="uid://b2n6iyqm5fuf8" path="res://ui/hud.tscn" id="5_j63pa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o3g4"]
+size = Vector2(1039, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue75p"]
+size = Vector2(1039, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkuf5"]
+size = Vector2(37.5, 630)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tirbe"]
+size = Vector2(37.5, 630)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0dsc7")
@@ -16,26 +29,48 @@ position = Vector2(125, 491)
 scale = Vector2(0.5, 0.5)
 
 [node name="basic_enemy2" parent="." instance=ExtResource("3_gpv7n")]
-position = Vector2(923, 183)
+position = Vector2(138, 159)
 scale = Vector2(0.5, 0.5)
 
 [node name="basic_enemy3" parent="." instance=ExtResource("3_gpv7n")]
-position = Vector2(865, 479)
-scale = Vector2(0.5, 0.5)
-
-[node name="basic_enemy4" parent="." instance=ExtResource("3_gpv7n")]
-position = Vector2(261, 157)
-scale = Vector2(0.5, 0.5)
-
-[node name="basic_enemy5" parent="." instance=ExtResource("3_gpv7n")]
-position = Vector2(563, 130)
-scale = Vector2(0.5, 0.5)
-
-[node name="basic_enemy6" parent="." instance=ExtResource("3_gpv7n")]
-position = Vector2(328, 498)
+position = Vector2(758, 431)
 scale = Vector2(0.5, 0.5)
 
 [node name="game_over_screen" parent="." instance=ExtResource("4_relea")]
 visible = false
 
+[node name="hud" parent="." instance=ExtResource("5_j63pa")]
+offset_left = 0.0441284
+offset_top = -0.637604
+offset_right = 0.0441284
+offset_bottom = -0.637604
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(510, -5)
+shape = SubResource("RectangleShape2D_8o3g4")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(516, 609)
+shape = SubResource("RectangleShape2D_ue75p")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-10, 299)
+shape = SubResource("RectangleShape2D_bkuf5")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1035, 294)
+shape = SubResource("RectangleShape2D_tirbe")
+
+[connection signal="damaged" from="player" to="." method="_on_player_damaged"]
 [connection signal="died" from="player" to="." method="_on_player_died"]
+[connection signal="died" from="basic_enemy" to="." method="_on_basic_enemy_died"]
+[connection signal="died" from="basic_enemy2" to="." method="_on_basic_enemy_died"]
+[connection signal="died" from="basic_enemy3" to="." method="_on_basic_enemy_died"]
