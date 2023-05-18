@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://c066cd6fvs4r8"]
+
+[ext_resource type="Script" path="res://ui/start_menu.gd" id="1_7yyy7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l31gg"]
+font_size = 48
+font_color = Color(0.87451, 0, 0.0666667, 1)
+
+[sub_resource type="Theme" id="Theme_312ey"]
+default_font_size = 32
+
+[node name="start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7yyy7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 389.0
+offset_top = 201.0
+offset_right = -353.0
+offset_bottom = -329.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dot Punch"
+label_settings = SubResource("LabelSettings_l31gg")
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 435.0
+offset_top = 270.0
+offset_right = -405.0
+offset_bottom = -277.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_312ey")
+text = "Start Punching?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
