@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="csc-303-final"
-run/main_scene="res://level/game.tscn"
+run/main_scene="res://ui/start_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -56,6 +56,7 @@ punch={
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="projectile"
 2d_physics/layer_5="fist"
+2d_physics/layer_6="enemy_spawn_area"
 
 [rendering]
 
