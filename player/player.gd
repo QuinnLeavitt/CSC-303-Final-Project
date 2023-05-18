@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+signal healed(amount)
+signal damaged(amount)
 signal died
 
 @export var fire_rate := 0.15
@@ -63,19 +65,19 @@ func throwPunch():
 	
 	p.rotation = rotation
 
-func take_damage():
+func take_damage(damageValue):
 	if health > 0:
-		health -= 20
-		print("taking damage")
-		print(health)
+		health -= damageValue
+		emit_signal("damaged", damageValue)
+		if health == 0:
+			die()
 	else:
 		die()
 
 func heal(healValue):
 	if health > 0 and health < 100:
 		health += healValue
-		print("healing")
-		print(health)
+		emit_signal("healed", healValue)
 
 func die():
 	if (is_alive==true):

@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://b2n6iyqm5fuf8"]
+[gd_scene load_steps=6 format=3 uid="uid://b2n6iyqm5fuf8"]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_yohdk"]
+[ext_resource type="Texture2D" uid="uid://dvtfdqqn1j3va" path="res://assets/art/HPEmpty.png" id="2_bsndv"]
+[ext_resource type="Texture2D" uid="uid://cbety81mcl5s6" path="res://assets/art/HPFull.png" id="3_2vmnc"]
+[ext_resource type="Script" path="res://ui/TextureProgressBar.gd" id="4_jblr6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1quvb"]
+font_size = 48
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -7,3 +15,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yohdk")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -88.0
+offset_right = 252.0
+offset_bottom = 168.0
+scale = Vector2(1.28587, 0.918309)
+value = 100.0
+texture_under = ExtResource("2_bsndv")
+texture_progress = ExtResource("3_2vmnc")
+script = ExtResource("4_jblr6")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 727.0
+offset_top = 7.0
+offset_right = -12.0
+offset_bottom = -523.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_1quvb")
