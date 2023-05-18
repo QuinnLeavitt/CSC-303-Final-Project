@@ -9,3 +9,7 @@ https://user-images.githubusercontent.com/59779489/239308051-0b81d9b5-2643-48ce-
 https://user-images.githubusercontent.com/59779489/239308043-77ff17bd-3a0d-42a3-91d5-30f172a6825a.png
 https://user-images.githubusercontent.com/59779489/239308064-22eaf315-4d2e-4dba-bc26-76058dd73602.png
 https://user-images.githubusercontent.com/59779489/239308056-b2f6f6be-844e-46ec-9d6d-58bad31edd99.png
+![Screenshot 2023-05-18 010256](https://github.com/QuinnLeavitt/csc-303-final-project/assets/59779489/77ff17bd-3a0d-42a3-91d5-30f172a6825a)
+<img width="502" alt="Screenshot 2023-05-18 005832" src="https://github.com/QuinnLeavitt/csc-303-final-project/assets/59779489/0b81d9b5-2643-48ce-bbaa-898832417cd6">
+<img width="503" alt="Screenshot 2023-05-18 010030" src="https://github.com/QuinnLeavitt/csc-303-final-project/assets/59779489/b2f6f6be-844e-46ec-9d6d-58bad31edd99">
+<img width="499" alt="Screenshot 2023-05-18 010158" src="https://github.com/QuinnLeavitt/csc-303-final-project/assets/59779489/22eaf315-4d2e-4dba-bc26-76058dd73602">
