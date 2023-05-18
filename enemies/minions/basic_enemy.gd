@@ -37,7 +37,7 @@ func _on_hit_box_body_entered(body):
 		while(is_player_hit and player.is_alive):
 			await get_tree().create_timer(.1).timeout
 			var playerBody = body
-			playerBody.take_damage(10)
+			playerBody.take_damage(5)
 
 
 func _on_hit_box_body_exited(body):
